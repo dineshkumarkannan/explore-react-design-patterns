@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SuccessToast from "../components/SuccessToast";
+import { useFormStatus } from "react-dom";
 
 const initialState = {
   firstName: "",
@@ -23,6 +24,19 @@ function validate(values) {
   return errors;
 }
 
+function Sumbit() {
+  const { pending } = useFormStatus();
+  console.log(pending);
+  return (
+    <button
+      type="submit"
+      className="bg-indigo-700 py-2 px-4 text-indigo-100 font-bold text-2xl hover:cursor-pointer"
+    >
+      Submit
+    </button>
+  );
+}
+
 const Controlled = () => {
   const [contact, setContact] = useState(initialState);
   const [errors, setErrors] = useState({});
@@ -34,15 +48,22 @@ const Controlled = () => {
     setErrors((prev) => ({ ...prev, [name]: "" }));
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit() {
+    // e.preventDefault();
     const validationErrors = validate(contact);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      console.log("Form Submitted:", contact);
-      setContact(initialState);
-      setShowToast(true);
+      (async function () {
+        await new Promise((resolve, rejecct) =>
+          setTimeout(() => {
+            console.log("Form Submitted:", contact);
+            setContact(initialState);
+            setShowToast(true);
+            return resolve(true);
+          }, 2000)
+        );
+      })();
     }
   }
 
@@ -51,7 +72,7 @@ const Controlled = () => {
       <h2 className="text-center text-3xl font-bold text-indigo-500 mb-4">
         Contact Form
       </h2>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form action={(e) => handleSubmit()}>
         <div className="row-container">
           <div>
             <label htmlFor="firstName">First Name</label>
@@ -159,12 +180,7 @@ const Controlled = () => {
         </div>
 
         <div className="w-full flex justify-center mt-4">
-          <button
-            type="submit"
-            className="bg-indigo-700 py-2 px-4 text-indigo-100 font-bold text-2xl hover:cursor-pointer"
-          >
-            Submit
-          </button>
+          <Sumbit />
         </div>
       </form>
 
