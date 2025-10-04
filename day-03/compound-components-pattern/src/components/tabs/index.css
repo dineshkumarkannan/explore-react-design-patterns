@@ -1,0 +1,35 @@
+.tabs-container {
+  min-width: inherit;
+  width: inherit;
+  min-height: 500px;
+  height: 100%;
+  padding: 0.5rem;
+  background-color: ghostwhite;
+}
+
+.tabs-header-container {
+  min-height: 3rem;
+  display: flex;
+  border-bottom: 1px solid gainsboro;
+}
+
+.tabs-header-container > * {
+  min-width: 120px;
+  text-align: center;
+}
+
+.tab {
+  line-height: 3rem;
+  min-height: inherit;
+  transition: border-bottom-color 0.5s ease;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-bottom-width: 2px;
+  border-bottom-color: green;
+}
+
+.tabs-panels-container {
+  padding: 1rem;
+}
