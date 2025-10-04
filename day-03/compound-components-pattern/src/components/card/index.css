@@ -1,0 +1,26 @@
+.card-container {
+  max-width: 320px;
+  width: 320px;
+  max-height: 360px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+  position: relative;
+}
+
+.card-header,
+.card-footer {
+  height: 60px;
+  width: inherit;
+  padding: 1rem;
+}
+
+.card-footer {
+  bottom: 0;
+  position: absolute;
+}
+
+.card-body {
+  padding: 0.5rem;
+}
