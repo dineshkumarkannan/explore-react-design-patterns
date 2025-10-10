@@ -7,3 +7,11 @@
 ## day-02
 
     ### Controlled and Uncontrolled pattern
+
+## day-03
+
+    ### Compound components pattern
+
+## day-04
+
+    ### Render prop pattern
