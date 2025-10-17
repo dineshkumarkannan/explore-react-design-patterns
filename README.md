@@ -15,3 +15,7 @@
 ## day-04
 
     ### Render prop pattern
+
+## day-05
+
+    ### Higher order component(HOC) pattern
