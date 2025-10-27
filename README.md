@@ -19,3 +19,7 @@
 ## day-05
 
     ### Higher order component(HOC) pattern
+
+## day-06
+
+    ### Custom hooks pattern
