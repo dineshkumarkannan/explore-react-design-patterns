@@ -27,3 +27,11 @@
 ## day-07
 
     ### Provider pattern
+
+## day-08
+
+    ### Optimistic UI pattern
+
+## day-09
+
+    ### State Reducer pattern
